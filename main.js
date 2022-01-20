@@ -15,7 +15,7 @@ var info = "";
 bot.on("messageCreate", async msg => {
     if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
-    } else if (msg.content.includes("http://" || "https://")) {
+    } else if (msg.content.includes("http" || "https")) {
         info = `Deleted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
         bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!");
         return bot.createMessage(msg.channel.id, {
