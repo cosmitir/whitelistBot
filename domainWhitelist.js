@@ -17,7 +17,10 @@ let domainWhitelist = [
     "streamable.com",
     "www.streamable.com",
     "instagram.com",
-    "www.instagram.com"
+    "www.instagram.com",
+    "tiktok.com",
+    "www.tiktok.com",
+    "vm.tiktok.com"
 ];
 
 exports.domainWhitelist = domainWhitelist;
