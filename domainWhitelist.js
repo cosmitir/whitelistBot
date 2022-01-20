@@ -1,3 +1,4 @@
+// Whitelist sketchy sites since 1904
 let domainWhitelist = [
     "discord.com",
     "www.discord.com",
