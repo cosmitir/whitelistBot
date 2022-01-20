@@ -4,6 +4,8 @@ const config = require("./config.json");
 const bot = new Eris(config.token);
 const { domainWhitelist } = require("./domainWhitelist.js");
 
+bot.editStatus(config.status, {name: config.activitiesName, type: config.activitiesType});
+
 bot.on("ready", () => {
     console.log("The bot will only work if it has Send Messages and Manage Messages permissions!\nAction | AuthorID | AuthorName | Message");
 });

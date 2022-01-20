@@ -1,3 +1,6 @@
 {
-    "token": "TOKEN"
+    "token": "TOKEN",
+    "status": "online",
+    "activitiesName": "",
+    "activitiesType": 0
 }
