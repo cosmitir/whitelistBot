@@ -5,7 +5,6 @@ Requirements:
     - Node.JS
     - Brain 😅
 
-
 Setup:
 
     - Clone repository
