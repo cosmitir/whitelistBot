@@ -11,7 +11,7 @@ bot.on("ready", () => {
 // Lets just create a variable here cuz im too lazy to do it the right way || Oh this variable is just to make log output easier
 var info = "";
 
-// The bot will get an API signal that a message was arrived, compare whitelist, delete any message containing web protocols || BOOM log everything
+// The bot will get an API signal that a message was arrived, compare whitelist, delete any message containing web protocols, warn and delete warn after 2500 seconds || BOOM log everything
 bot.on("messageCreate", async msg => {
     if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
@@ -29,7 +29,7 @@ bot.on("messageCreate", async msg => {
                     },]
             }
         }).then(async a => {
-            await delay(2500);
+            await delay(3500); // Delete warn delay (default: 3500)
             return a.delete();
         });
     }
