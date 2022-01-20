@@ -15,7 +15,9 @@ let domainWhitelist = [
     "medal.tv",
     "www.medal.tv",
     "streamable.com",
-    "www.streamable.com"
+    "www.streamable.com",
+    "instagram.com",
+    "www.instagram.com"
 ];
 
 exports.domainWhitelist = domainWhitelist;
