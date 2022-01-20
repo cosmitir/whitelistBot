@@ -19,6 +19,7 @@ Known Issues:
 Future Development:
 
     - Right I will update the code. SOON 👀 (instead of verify for whitelist then else the rest, i will change it to verify if message has web protocol and if the domain isn't whitelisted)
+    - Subdomain verification
 
 Contribution:
 
