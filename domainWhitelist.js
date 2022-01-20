@@ -8,12 +8,14 @@ let domainWhitelist = [
     "www.tenor.com",
     "twitch.tv",
     "www.twitch.tv",
+    "youtu.be.com",
+    "www.youtu.be.com",
     "youtube.com",
     "www.youtube.com",
     "medal.tv",
     "www.medal.tv",
     "streamable.com",
-    "www.streamable.com",
+    "www.streamable.com"
 ];
 
 exports.domainWhitelist = domainWhitelist;
