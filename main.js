@@ -1,5 +1,7 @@
 // No i wont tell u what this does, go check Eris documentation
-const { bot } = require("./config");
+const Eris = require("eris");
+const config = require("./config.json");
+const bot = new Eris(config.token);
 const { domainWhitelist } = require("./domainWhitelist");
 
 bot.on("ready", () => {
@@ -15,7 +17,19 @@ bot.on("messageCreate", (msg) => {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
     } else if (msg.content.includes("http" || "https")) {
         bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!");
-        bot.createMessage(msg.channel.id, `**Warning**:\n> <@${msg.author.id}> Stop sending links!\n\nIf you think this was a mistake open a ticket with a screenshot of the link and the reason why it should be whitelisted.`);
+        bot.createMessage(msg.channel.id, {
+            embed: {
+                title: "Warning",
+                description: `<@${msg.author.id}> Stop sending links!`,
+                    color: 0x8532D9,
+                    fields: [
+                        {
+                            name: "Support",
+                            value: "If you think this was a mistake open a ticket with a screenshot of the link and the reason why it should be whitelisted.",
+                    },
+                ]
+            }
+        });
         info = `Deleted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
     }
     console.log(info);
