@@ -29,7 +29,7 @@ bot.on("messageCreate", async msg => {
                     },]
             }
         }).then(async a => {
-            await delay(3500); // Delete warn delay (default: 3500)
+            await delay(6900); // Delete warn delay (default: 6900)
             return a.delete();
         });
     }
