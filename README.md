@@ -10,6 +10,7 @@ Requirements:
 Setup:
 
     - Clone repository
+    - Rename config.example.json to config.json
     - Run `npm install --no-optional eris`
     - Start with main.js
 
