@@ -2,7 +2,7 @@
 const Eris = require("eris");
 const config = require("./config.json");
 const bot = new Eris(config.token);
-const { domainWhitelist } = require("./domainWhitelist");
+const { domainWhitelist } = require("./domainWhitelist.js");
 
 bot.on("ready", () => {
     console.log("The bot will only work if it has Send Messages and Manage Messages permissions!\nAction | AuthorID | AuthorName | Message");
