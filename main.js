@@ -21,5 +21,5 @@ bot.on("messageCreate", (msg) => {
     console.log(info);
 });
 
-// "Connect me to the internet so I can destroy the world" - AI's 2069
+// "Connect me to the world wide web so I can destroy the world" - AI's 2069
 bot.connect();
