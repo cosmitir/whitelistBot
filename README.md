@@ -1,5 +1,7 @@
 # whitelistBot
 
+Please gib Send and Manage Messages permissions to bot app or it will gib u a free cookie.
+
 Requirements:
 
     - Node.JS
