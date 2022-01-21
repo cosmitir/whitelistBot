@@ -20,7 +20,9 @@ let domainWhitelist = [
     "www.instagram.com",
     "tiktok.com",
     "www.tiktok.com",
-    "vm.tiktok.com"
+    "vm.tiktok.com",
+    "forms.gle",
+    "www.forms.gle"
 ];
 
 exports.domainWhitelist = domainWhitelist;
