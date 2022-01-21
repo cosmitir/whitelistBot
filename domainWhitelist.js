@@ -4,6 +4,7 @@ let domainWhitelist = [
     "www.discord.com",
     "discordapp.com",
     "www.discordapp.com",
+    "media.discordapp.net",
     "tenor.com",
     "www.tenor.com",
     "twitch.tv",
