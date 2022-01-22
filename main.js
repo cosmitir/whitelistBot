@@ -29,9 +29,9 @@ bot.on("messageCreate", async msg => {
                             value: "If you think this was a mistake open a ticket with a screenshot of the link and the reason why it should be whitelisted.",
                     },]
             }
-        }).then(async a => {
+        }).then(async sentMessage => {
             await delay(6900); // Delete warn delay (default: 6900)
-            return a.delete();
+            return sentMessage.delete();
         });
     }
     console.log(info);
