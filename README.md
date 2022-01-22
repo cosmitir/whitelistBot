@@ -1,5 +1,7 @@
 # whitelistBot
 
+#### **Private and protected midnight bot code (702095078327582771), the use or modification of it will end in a DMCA report against you.**
+
 Please gib Send and Manage Messages permissions to bot app or it will gib u a free cookie.
 
 Requirements:
