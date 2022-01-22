@@ -16,9 +16,8 @@ bot.on("messageCreate", async msg => {
     if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
     } else if (msg.content.includes("http" || "https")) {
-        info = `Deleted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
-        bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!");
-        bot.createMessage(msg.channel.id, {
+        bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!").catch(err => {console.log(`${err} |> Not deleted user message, check error!`)});
+        await bot.createMessage(msg.channel.id, {
             embed: {
                 title: "Warning",
                 description: `<@${msg.author.id}> Stop sending links!`,
@@ -28,9 +27,11 @@ bot.on("messageCreate", async msg => {
                             value: "If you think this was a mistake open a ticket with a screenshot of the link and the reason why it should be whitelisted.",
                     },]
             }
-        }).then(async sentMessage => {
+        })
+        .then(async sentMessage => {
             await delay(6900); // Delete warn delay (default: 6900)
             sentMessage.delete();
+            info = `Warning || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
         });
     }
     console.log(info);
