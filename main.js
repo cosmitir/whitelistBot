@@ -2,7 +2,7 @@
 const Eris = require("eris");
 const config = require("./config.json");
 const bot = new Eris(config.token);
-const { domainWhitelist } = require("./domainWhitelist.js");
+const domainWhitelist = require("./domainWhitelist.js");
 
 bot.on("ready", () => {
     bot.editStatus(config.status, {name: config.activitiesName, type: config.activitiesType});
