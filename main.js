@@ -1,12 +1,12 @@
 // No i wont tell u what this does, go check Eris documentation
-const Eris = require("eris");
+const client = require("eris");
 const config = require("./config.json");
-const bot = new Eris(config.token);
+const bot = new client(config.token);
 const { domainWhitelist } = require("./domainWhitelist.js");
 
 bot.on("ready", () => {
     bot.editStatus(config.status, {name: config.activitiesName, type: config.activitiesType});
-    console.log("The bot will only work if it has Send Messages and Manage Messages permissions!\nAction | AuthorID | AuthorName | Message");
+    console.log("Action | AuthorID | AuthorName | Message");
 });
 
 // The bot will get an API signal that a message was arrived, compare whitelist, delete any message containing web protocols, warn and delete warn after 2500 seconds || BOOM log everything
