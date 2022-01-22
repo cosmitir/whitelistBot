@@ -9,17 +9,16 @@ bot.on("ready", () => {
     console.log("The bot will only work if it has Send Messages and Manage Messages permissions!\nAction | AuthorID | AuthorName | Message");
 });
 
-// Lets just create a variable here cuz im too lazy to do it the right way || Oh this variable is just to make log output easier
-var info = "";
-
 // The bot will get an API signal that a message was arrived, compare whitelist, delete any message containing web protocols, warn and delete warn after 2500 seconds || BOOM log everything
 bot.on("messageCreate", async msg => {
+    // Lets just create a variable here cuz im too lazy to do it the right way || Oh this variable is just to make log output easier
+    var info = "";
     if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
     } else if (msg.content.includes("http" || "https")) {
         info = `Deleted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
         bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!");
-        return bot.createMessage(msg.channel.id, {
+        bot.createMessage(msg.channel.id, {
             embed: {
                 title: "Warning",
                 description: `<@${msg.author.id}> Stop sending links!`,
@@ -31,7 +30,7 @@ bot.on("messageCreate", async msg => {
             }
         }).then(async sentMessage => {
             await delay(6900); // Delete warn delay (default: 6900)
-            return sentMessage.delete();
+            sentMessage.delete();
         });
     }
     console.log(info);
