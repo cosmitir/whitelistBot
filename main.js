@@ -1,7 +1,7 @@
 // No i wont tell u what this does, go check Eris documentation
-const client = require("eris");
+const Eris = require("eris");
 const config = require("./config.json");
-const bot = new client(config.token);
+const bot = new Eris(config.token);
 const { domainWhitelist } = require("./domainWhitelist.js");
 
 bot.on("ready", () => {
