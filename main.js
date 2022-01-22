@@ -13,7 +13,7 @@ bot.on("ready", () => {
 bot.on("messageCreate", async (msg) => {
     // Lets just create a variable here cuz im too lazy to do it the right way || Oh this variable is just to make log output easier
     var info = "";
-    if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`)) || msg.author.bot) {
+    if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
         info = `Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
     } else if (msg.content.includes("http" || "https")) {
         info = `Warning/Delete || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`;
