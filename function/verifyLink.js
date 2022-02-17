@@ -21,7 +21,7 @@ module.exports = {
 				},
 			})
 				.then(async (sentMessage) => {
-				// Delete warn delay (default: 6900)
+					// Delete warn delay (default: 6900)
 					await delay(6900);
 					sentMessage.delete();
 				})
