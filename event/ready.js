@@ -1,10 +1,11 @@
-const config = require("../config.json");
+const { status, activitiesName, activitiesType, activitiesUrl } = require("../config.json");
 
 module.exports = {
-	name: 'ready',
+	name: "ready",
 	once: true,
 	execute(bot) {
-        bot.editStatus(config.status, {name: config.activitiesName, type: config.activitiesType});
-        console.log("Action | AuthorID | AuthorName | Message");
+		// Edit bot status/activity and sends a message in console
+		bot.editStatus(status, { name: activitiesName, type: activitiesType, url: activitiesUrl });
+		console.log("Action || AuthorID | AuthorName || Message");
 	},
 };

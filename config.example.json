@@ -2,5 +2,6 @@
     "token": "Bot TOKEN",
     "status": "online",
     "activitiesName": "",
-    "activitiesType": 0
+    "activitiesType": 0,
+		"activitiesUrl": ""
 }

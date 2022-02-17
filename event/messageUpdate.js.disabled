@@ -1,9 +1,10 @@
 const { verifyLink } = require("../function/verifyLink.js");
 
 module.exports = {
-	name: "messageCreate",
+	name: "messageUpdate",
 	execute(msg, bot) {
-		// Delete messages that contains non whitelisted links
 		verifyLink(msg, bot);
 	},
 };
+
+// WIP
