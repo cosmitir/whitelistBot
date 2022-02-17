@@ -1,0 +1,7 @@
+module.exports = {
+	createCommands: function(bot) {
+		bot.createCommand({ name: "suggest", description: "Used to create a suggestion" })
+			.then(() => {console.log("Created all commands");})
+			.catch(console.error);
+	},
+};

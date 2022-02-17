@@ -8,7 +8,7 @@ module.exports = {
 		}
 		else if (msg.content.includes("http" || "https")) {
 			console.log(`Warning/Delete || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
-			msg.channel.deleteMessage(msg.id).catch(err => {console.log(`${err} |> Not deleted user message, check error!`);});
+			msg.channel.deleteMessage(msg.id).catch(console.error);
 			msg.channel.createMessage({
 				embed: {
 					title: "Warning",
@@ -20,12 +20,12 @@ module.exports = {
 					}],
 				},
 			})
-				.catch(err => {console.log(err);})
 				.then(async (sentMessage) => {
 				// Delete warn delay (default: 6900)
 					await delay(6900);
 					sentMessage.delete();
-				});
+				})
+				.catch(console.error);
 		}
 	},
 };

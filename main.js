@@ -18,4 +18,9 @@ for (const file of eventFiles) {
 }
 
 // "Connect me to the world wide web so I can destroy it" - AI's 2069
-bot.connect();
+try {
+	bot.connect();
+}
+catch (error) {
+	console.log(error);
+}
