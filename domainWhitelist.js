@@ -24,6 +24,16 @@ const domainWhitelist = [
 	"vm.tiktok.com",
 	"forms.gle",
 	"www.forms.gle",
+	"media.discordapp.net",
+	"cdn.discordapp.net",
+	"cdn.discordapp.com",
+	"youtu.be",
+	"we.tl",
+	"tebex.io",
+	"atlanticroleplay.tebex.io",
+	"clips.twitch.tv",
+	"docs.google.com",
+	"govatlantic.at.ua",
 ];
 
 exports.domainWhitelist = domainWhitelist;

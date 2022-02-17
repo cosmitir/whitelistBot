@@ -1,7 +1,7 @@
 // No i wont tell u what this does, go check Eris documentation
 const Eris = require("eris");
-const config = require("./config.json");
-const bot = new Eris(config.token);
+const { token } = require("./config.json");
+const bot = new Eris.Client(token, { intents: ["guilds", "guildMembers", "guildMessages"], messageLimit: 100, maxShards: "auto" });
 const fs = require("fs");
 
 // Event handler
