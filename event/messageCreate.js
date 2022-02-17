@@ -2,13 +2,13 @@ const { domainWhitelist } = require("../domainWhitelist.js");
 
 module.exports = {
 	name: 'messageCreate',
-	async execute(msg, bot) {
+	execute(msg, bot) {
         if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
             console.log(`Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
         } else if (msg.content.includes("http" || "https")) {
             console.log(`Warning/Delete || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
             bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!").catch(err => {console.log(`${err} |> Not deleted user message, check error!`)});
-            await bot.createMessage(msg.channel.id, {
+            bot.createMessage(msg.channel.id, {
                 embed: {
                     title: "Warning",
                     description: `<@${msg.author.id}> Stop sending links!`,
