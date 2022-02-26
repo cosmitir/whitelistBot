@@ -3,5 +3,10 @@
     "status": "online",
     "activitiesName": "",
     "activitiesType": 0,
-		"activitiesUrl": ""
+		"activitiesUrl": "",
+		"guildID": "",
+		"verifyChannel": "",
+		"verifyEmoji": "",
+		"verifyMessage": "",
+		"verifyRole": ""
 }

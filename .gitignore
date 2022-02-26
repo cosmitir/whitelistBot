@@ -1,6 +1,7 @@
 # Config files
 config.json
 .vscode/
+jsconfig.json
 
 # Logs
 logs
