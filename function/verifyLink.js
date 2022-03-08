@@ -1,12 +1,12 @@
-const { domainWhitelist } = require("../domainWhitelist.js");
+const { domainWhitelist } = require("../domainWhitelist.json");
 const { delay } = require("./delay.js");
 
 module.exports = {
 	verifyLink: async function(msg, bot) {
-		if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {return;}
-		/* {
-			console.log(`Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
-		} */
+		if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
+			// console.log(`Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
+			return;
+		}
 		else if (msg.content.includes("http" || "https")) {
 			console.log(`Warning/Delete || ${msg.author.id}`);
 			await bot.deleteMessage(msg.channel.id, msg.id, "Non whitelisted link in message!").catch(console.error);
